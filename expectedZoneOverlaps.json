@@ -134,6 +134,12 @@
       "description": "Allow dispupted maritime border near the Ems estuary to overlap.  https://en.wikipedia.org/wiki/Germany%E2%80%93Netherlands_border#Disputes"
     }
   ],
+  "Europe/Astrakhan-Europe/Moscow": [
+    {
+      "bounds": [46.4, 45.4, 46.9, 45.6],
+      "description": "It was causing problems."
+    }
+  ],
   "Europe/Athens-Europe/Istanbul": [
     {
       "bounds": [27.1, 37, 27.2, 37.1],
