@@ -328,12 +328,14 @@ function downloadFromOverpass (
       const data = results.fetchFromOverpassIfNeeded
       if (!data.features) {
         const err = new Error(`Invalid geojson from overpass for query: ${queryName}`)
+        process.exit(2)
         return cb(err)
       }
       if (data.features.length === 0) {
         console.error('No data for the following query:')
         console.error(query)
         console.error('To read more about this error, please visit https://git.io/vxKQL')
+        process.exit(3)
         return cb(new Error('No data found for from overpass query'))
       }
       cb()
@@ -361,6 +363,7 @@ function downloadFromOverpass (
             fs.writeFileSync(problemFilename, stringifiedGeojson)
             console.error('saved problem file to ' + problemFilename)
             console.error('To read more about this error, please visit https://git.io/vxKQq')
+            process.exit(4)
             return cb(errors)
           }
           let curGeom
@@ -713,6 +716,7 @@ function validateTimezoneBoundaries () {
           console.error('wrote overlap area as file ' + debugFilename)
           console.error('To read more about this error, please visit https://git.io/vx6nx')
           allZonesOk = false
+          process.exit(5)
         }
       }
       validationProgress.logNext()
