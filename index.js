@@ -335,7 +335,7 @@ function downloadFromOverpass (
         console.error('No data for the following query:')
         console.error(query)
         console.error('To read more about this error, please visit https://git.io/vxKQL')
-        process.exit(3)
+        process.exitCode = 3
         return cb(new Error('No data found for from overpass query'))
       }
       cb()
