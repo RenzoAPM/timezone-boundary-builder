@@ -11,7 +11,7 @@ const helpers = require('@turf/helpers')
 const multiPolygon = helpers.multiPolygon
 const polygon = helpers.polygon
 const asynclib = require('async')
-import * as got from 'got'
+const got = require('got')
 const jsts = require('jsts')
 const rimraf = require('rimraf')
 const overpass = require('query-overpass')
